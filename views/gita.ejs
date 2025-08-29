@@ -19,10 +19,8 @@
           <small>Language: <%= article.language %></small>
           <h2 class="mt-2 fs-4 lh-base"><small>Sanskrit: </small><%= article.verse %></h2>
           <h2 class="fs-4 lh-base"><small>Translation: </small><%= article.synonyms %></h2>
-          <% 
-          const originalString = article.audio_link;
-          const playm = originalString.replace("public/audio", "media/audios"); 
-          %>
+          <% const originalString = article.audio_link;
+          const playm = originalString.replace("public/audio", "media/audios");  %>
           <audio controls>
               <source src="<%= playm %>" type="audio/mp3"/>
           </audio>
