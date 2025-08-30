@@ -1093,6 +1093,11 @@ video {
   margin-right: auto;
 }
 
+.my-10 {
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
+}
+
 .mr-16 {
   margin-right: 4rem;
 }
@@ -1226,9 +1231,9 @@ video {
   line-height: 1.75rem;
 }
 
-.text-xl\/8 {
+.text-xl\/10 {
   font-size: 1.25rem;
-  line-height: 2rem;
+  line-height: 2.5rem;
 }
 
 .text-xs {
