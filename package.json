@@ -5,16 +5,25 @@
   "private": true,
   "scripts": {
     "start": "node app.js",
+    "build:css": "tailwindcss -i ./public/stylesheets/style.css -o ./public/stylesheets/output.css",
+    "build": "npm run build:css",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "axios": "^0.27.2",
+    "axios": "^1.11.0",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
     "ejs": "^3.1.8",
-    "express": "~4.16.1",
+    "express": "^4.21.2",
     "http-errors": "~1.6.3",
-    "morgan": "~1.9.1"
+    "morgan": "^1.10.1"
   },
-  "author": "Sreenivas.T"
+  "author": "Sreenivas.T",
+  "devDependencies": {
+    "@tailwindcss/typography": "^0.5.16",
+    "@types/node": "^24.3.0",
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^3.4.17"
+  }
 }

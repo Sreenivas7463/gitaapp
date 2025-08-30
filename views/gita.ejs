@@ -1,34 +1,54 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title><%= title %></title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-    
 
-    <% if(articles != null) { %>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>
+    <%= title %>
+  </title>
+
+  <link rel='stylesheet' href='/stylesheets/output.css' />
+</head>
+
+<body>
+  <div class="min-h-full">
+    <section class="">
+      <h1 class="text-2xl">
+        <%= title %>
+      </h1>
+      <p class="text-orange-800">Welcome to <%= title %>
+      </p>
+    </section>
+    <section class="mt-10">
+      <% if(articles !=null) { %>
         <% articles.forEach(function(article, index) { %>
-          <h1 class="fs-1 text-dark"><%= article.chapter_name %></h1>
-          <small>Chapter: <%= article.chapter_no %> - Verse: <%= article.verse_no %></small>, &nbsp;
-          <small>Language: <%= article.language %></small>
-          <h2 class="mt-2 fs-4 lh-base"><small>Sanskrit: </small><%= article.verse %></h2>
-          <h2 class="fs-4 lh-base"><small>Translation: </small><%= article.synonyms %></h2>
-          <% const originalString = article.audio_link;
-          const playm = originalString.replace("public/audio", "media/audios");  %>
-          <audio controls>
-              <source src="<%= playm %>" type="audio/mp3"/>
-          </audio>
-          <h3 class="mt-2 lh-base fs-5">Description: <%= article.translation %></h3>
-          <h3 class="mt-3 lh-base fs-5 fw-light">Explanation: <%= article.purport %></h3>
-        <% }) %>
-        <% } else { %>
-            No posts found.
-        <% } %>
-  </body>
+          <h1 class="text-3xl text-amber-700">
+            <%= article.chapter_name %>
+          </h1>
+          <small class="text-xs">Chapter: <%= article.chapter_no %> - Verse: <%= article.verse_no %></small>, &nbsp;
+          <small class="text-xs">Language: <%= article.language %></small>
+          <h2 class="prose mt-2 text-xl text-gray-800"><small>Sanskrit: </small>
+            <%= article.verse %>
+          </h2>
+          <h2 class="prose mt-2 text-xl text-gray-800"><small>Translation: </small>
+            <%= article.synonyms %>
+          </h2>
+          <% const originalString=article.audio_link; const playm=originalString.replace("public/audio", "media/audios"
+            ); %>
+            <audio controls>
+              <source src="<%= playm %>" type="audio/mp3" />
+            </audio>
+            <h3 class="prose mt-2 text-2xl text-gray-800">Description: <%= article.translation %>
+            </h3>
+            <h3 class="prose mt-3 text-2xl text-gray-800">Explanation: <%= article.purport %>
+            </h3>
+            <% }) %>
+              <% } else { %>
+                No posts found.
+                <% } %>
+    </section>
+  </div>
+</body>
+
 </html>
